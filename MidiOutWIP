@@ -79,19 +79,7 @@ midpoint = 32768
 def sawtooth(angle):
     return 1.0 - angle % twopi / twopi * 2
 
-# make a sawtooth wave between +/- each value in volumes
-# phase shifted so it starts and ends near midpoint
-# "H" arrays for RawSample looks more memory efficient
-# see https://forums.adafruit.com/viewtopic.php?f=60&t=150894
-def waveform_sawtooth(length, waves, volumes):
-    for vol in volumes:
-        waveraw = array.array("H",
-                              [midpoint +
-                               round(vol * sawtooth((idx + 0.5) / length
-                                                    * twopi
-                                                    + math.pi))
-                               for idx in list(range(length))])
-        waves.append((audiocore.RawSample(waveraw), waveraw))
+
 
 # Make some square waves of different volumes volumes, generated with
 # n=10;[round(math.sqrt(x)/n*32767*n/math.sqrt(n)) for x in range(1, n+1)]
