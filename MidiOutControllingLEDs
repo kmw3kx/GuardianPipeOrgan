@@ -86,18 +86,13 @@ pins = [board.D13,
         board.D3,
         board.D2]
 
+
 # add LED's
 # ledG = digitalio.DigitalInOut(board.D1)
 # ledG.direction = digitalio.Direction.OUTPUT
-
+# n
 # or do it like this
-noteLEDs = []
-x = 0
-for pin in pins:
-    noteLEDs = [digitalio.DigitalInOut(pin)]
-    noteLEDs.direction[x] = digitalio.Direction.OUTPUT
 
-del pins, x  # done with that
 
 # brightness 1.0 saves memory by removing need for a second buffer
 # 10 is number of NeoPixels on CPX
