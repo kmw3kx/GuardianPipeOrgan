@@ -1,0 +1,24 @@
+"""CircuitPython Essentials UART Serial example"""
+import time
+import board
+import busio
+import digitalio
+
+# For most CircuitPython boards:
+led = digitalio.DigitalInOut(board.D13)
+# For QT Py M0:
+# led = digitalio.DigitalInOut(board.SCK)
+led.direction = digitalio.Direction.OUTPUT
+
+uart = busio.UART(board.TX, board.RX, baudrate=9600)
+
+string ="hello world"
+
+encoded_string = string.encode()
+byte_array = bytearray(encoded_string)
+
+x = 0
+
+while True:
+    uart.write(byte_array)
+    print("Data!")
