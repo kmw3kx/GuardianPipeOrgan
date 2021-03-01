@@ -73,26 +73,53 @@ twopi = 2 * math.pi
 # 60 = C = 12
 # 61 = C# = 11
 
-pins = [board.D13,
-        board.D12,
-        board.D11,
-        board.D10,
-        board.D9,
-        board.D8,
-        board.D7,
-        board.D6,
-        board.D5,
-        board.D4,
-        board.D3,
-        board.D2]
-
-
 # add LED's
 # ledG = digitalio.DigitalInOut(board.D1)
 # ledG.direction = digitalio.Direction.OUTPUT
 # n
 # or do it like this
 
+pinD13 = digitalio.DigitalInOut(board.D13)
+pinD12 = digitalio.DigitalInOut(board.D12)
+pinD11 = digitalio.DigitalInOut(board.D11)
+pinD10 = digitalio.DigitalInOut(board.D10)
+pinD9 = digitalio.DigitalInOut(board.D9)
+pinD8 = digitalio.DigitalInOut(board.D8)
+pinD7 = digitalio.DigitalInOut(board.D7)
+pinD6 = digitalio.DigitalInOut(board.D6)
+pinD5 = digitalio.DigitalInOut(board.D5)
+pinD4 = digitalio.DigitalInOut(board.D4)
+pinD3 = digitalio.DigitalInOut(board.D3)
+pinD2 = digitalio.DigitalInOut(board.D2)
+
+pinD13.direction = digitalio.Direction.OUTPUT
+pinD12.direction = digitalio.Direction.OUTPUT
+pinD11.direction = digitalio.Direction.OUTPUT
+pinD10.direction = digitalio.Direction.OUTPUT
+pinD9.direction = digitalio.Direction.OUTPUT
+pinD8.direction = digitalio.Direction.OUTPUT
+pinD7.direction = digitalio.Direction.OUTPUT
+pinD6.direction = digitalio.Direction.OUTPUT
+pinD5.direction = digitalio.Direction.OUTPUT
+pinD4.direction = digitalio.Direction.OUTPUT
+pinD3.direction = digitalio.Direction.OUTPUT
+pinD2.direction = digitalio.Direction.OUTPUT
+
+
+noteLEDs = [pinD13,
+            pinD12,
+            pinD11,
+            pinD10,
+            pinD9,
+            pinD8,
+            pinD7,
+            pinD6,
+            pinD5,
+            pinD4,
+            pinD3,
+            pinD2]
+
+# Brute forced
 
 # brightness 1.0 saves memory by removing need for a second buffer
 # 10 is number of NeoPixels on CPX
@@ -102,6 +129,11 @@ pixels = neopixel.NeoPixel(board.NEOPIXEL, numpixels, brightness=1.0)
 # Turn NeoPixel on to represent a note using RGB x 10
 # to represent 30 notes - doesn't do anything with pitch bend
 def noteLED(pix, pnote, pvel):
+    
+
+
+
+    
     note30 = (pnote - midi_note_C4) % (3 * numpixels)
     pos = note30 % numpixels
     r, g, b = pix[pos]
