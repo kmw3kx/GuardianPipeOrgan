@@ -59,4 +59,85 @@ So, I do not have the transistors or the shift registers or any of that fancy st
 
 The wiring is easy. a bunch of LED's and resistors. Iet's get working on the code for it.
 
+Ok so I've already run into a couple problems about how to write the code. The code I'm taking it from sets all of the pins using a for loop. But, I can't find a way to do that with digital pins because they require a 2nd initialization to tell the pin whether to be input or output. Brute forcing it might just be the correct solution, but the idea of having the pins in an array just makes the code so much simpler.
 
+Now that I've described the problem, the solution seems clear: do a mix
+
+This didn't work
+
+```python
+pins = [board.D13,
+        board.D12,
+        board.D11,
+        board.D10,
+        board.D9,
+        board.D8,
+        board.D7,
+        board.D6,
+        board.D5,
+        board.D4,
+        board.D3,
+        board.D2]
+
+
+# add LED's
+# ledG = digitalio.DigitalInOut(board.D1)
+# ledG.direction = digitalio.Direction.OUTPUT
+# n
+# or do it like this
+
+noteLEDs = []
+x = 0
+for pin in pins:
+    noteLEDs = [digitalio.DigitalInOut(pin)]
+    print(str(pin))
+
+del pins, x  # done with that
+noteLEDs.direction = digitalio.Direction.OUTPUT
+```
+
+Lets try this now: set the pins each to a variable, then set each variable to a list.
+
+```python
+pinD13 = digitalio.DigitalInOut(board.D13)
+pinD12 = digitalio.DigitalInOut(board.D12)
+pinD11 = digitalio.DigitalInOut(board.D11)
+pinD10 = digitalio.DigitalInOut(board.D10)
+pinD9 = digitalio.DigitalInOut(board.D9)
+pinD8 = digitalio.DigitalInOut(board.D8)
+pinD7 = digitalio.DigitalInOut(board.D7)
+pinD6 = digitalio.DigitalInOut(board.D6)
+pinD5 = digitalio.DigitalInOut(board.D5)
+pinD4 = digitalio.DigitalInOut(board.D4)
+pinD3 = digitalio.DigitalInOut(board.D3)
+pinD2 = digitalio.DigitalInOut(board.D2)
+
+pinD13.direction = digitalio.Direction.OUTPUT
+pinD12.direction = digitalio.Direction.OUTPUT
+pinD11.direction = digitalio.Direction.OUTPUT
+pinD10.direction = digitalio.Direction.OUTPUT
+pinD9.direction = digitalio.Direction.OUTPUT
+pinD8.direction = digitalio.Direction.OUTPUT
+pinD7.direction = digitalio.Direction.OUTPUT
+pinD6.direction = digitalio.Direction.OUTPUT
+pinD5.direction = digitalio.Direction.OUTPUT
+pinD4.direction = digitalio.Direction.OUTPUT
+pinD3.direction = digitalio.Direction.OUTPUT
+pinD2.direction = digitalio.Direction.OUTPUT
+
+
+noteLEDs = [pinD13,
+            pinD12,
+            pinD11,
+            pinD10,
+            pinD9,
+            pinD8,
+            pinD7,
+            pinD6,
+            pinD5,
+            pinD4,
+            pinD3,
+            pinD2]
+
+# Brute forced
+```
