@@ -141,3 +141,8 @@ noteLEDs = [pinD13,
 
 # Brute forced
 ```
+### Schedule
+
+### CAD
+
+[Link to Onshape](https://cvilleschools.onshape.com/documents/e358e4e3ba9e07c5ae938246/w/c6c09eac29318e33af1bc1ef/e/29cbd6e08dd43a0f8d613074)
