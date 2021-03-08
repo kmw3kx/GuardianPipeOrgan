@@ -143,6 +143,13 @@ noteLEDs = [pinD13,
 ```
 ### Schedule
 
+1st week |Get midi working with the circuit pythons|Feb. 22nd-26th
+2nd week |Order all of the parts we’ll need|Mar. 1st-5th
+3rd week|Design the organ pipes and the valve system|Mar. 8th-12th
+4th week|Design the Shell to put the organ into|Mar. 15th-19th
+5th week|Fabrication|Mar.22nd-26th
+6th week|Troubleshooting (buffer week)|Mar. 29th-Apr.2
+
 ### CAD
 
 [Link to Onshape](https://cvilleschools.onshape.com/documents/e358e4e3ba9e07c5ae938246/w/c6c09eac29318e33af1bc1ef/e/29cbd6e08dd43a0f8d613074)
