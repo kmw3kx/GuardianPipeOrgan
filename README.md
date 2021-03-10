@@ -151,6 +151,14 @@ noteLEDs = [pinD13,
 | 5th week | Fabrication                                 | Mar.22nd-26th   |
 | 6th week | Troubleshooting (buffer week)               | Mar. 29th-Apr.2 |
 
+
+#### 3rd Week
+
+Bob Goal: Finish the design for the organ pipes. Design the Valve system. 
+
+Justyn Goal: Fix up the github, Add pictures, cad, toc. Lay out the valves once Bob Has made the valves
+
+
 ### CAD
 
 [Link to Onshape](https://cvilleschools.onshape.com/documents/e358e4e3ba9e07c5ae938246/w/c6c09eac29318e33af1bc1ef/e/29cbd6e08dd43a0f8d613074)
