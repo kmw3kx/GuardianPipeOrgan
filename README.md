@@ -6,6 +6,7 @@ Pardon the dust as we keep updating this README!
 
 ins Table of Contents
 
+
 ### Project Pre-Planning
 ins Pre-planning Document
 
@@ -154,9 +155,16 @@ noteLEDs = [pinD13,
 
 #### 3rd Week
 
-Bob Goal: Finish the design for the organ pipes. Design the Valve system. 
+Bob Goal: Finish the design for the organ pipes. Design the Valve system.
 
 Justyn Goal: Fix up the github, Add pictures, cad, toc. Lay out the valves once Bob Has made the valves
+
+Evaluation: Bob really had trouble delegating work, so we only achieved designing the valve system. We finally our 3D printed Whistle prototype and that has caused us to reevaluate the design of our organ. Instead of using open flue organ pipes, we are going to use closed organ flue pipes, because they allow for a lower tone in a smaller size, and require less air pressure. And we are going to do pipes C5-G7 so they are smaller yet (longest one is 1/2 a foot!) Since they are now smaller, the silicone tubing of 1/4" might be too big now, which means we'll have to redesign the valve to fit the new size of tubing.
+
+#### 4th Week
+Justyn: Design the Organ pipes to make them stopped and tune-able by adjusting the screw on stopper. Add nozzle on the bottom to directly friction fit connect the tubes to. add brackets to the design of the organ pipes to hold them upright
+
+Bob: Work on code; Get Servos working with midi and arduino mega.
 
 
 ### CAD
