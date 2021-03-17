@@ -166,6 +166,10 @@ Justyn: Design the Organ pipes to make them stopped and tune-able by adjusting t
 
 Bob: Work on code; Get Servos working with midi and arduino mega.
 
+3/17/2021
+
+Justyn is having computer problems so I'm the only one who can do Onshape. I had to really think about how big everything was going to be, so I had to scale it down to the bottom note of F4 instead of C5. Really, I just couldn't realistically fabrcate pipes smaller than that C7 stopped pipe. I added threads on to both the cap and the top of the pipe so that the pipes can be tuned relatively easily. Hopefully. Next course of action is to define the silicone tubing size again and then remake the valve so it is smaller. Lot's of redesigning, but it will all work out.
+
 
 ### CAD
 
