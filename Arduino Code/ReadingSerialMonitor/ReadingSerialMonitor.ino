@@ -54,7 +54,7 @@ void serialEvent() {
 
 void setup() {
   Serial.begin(9600); //For communicating with the computer
-  Serial1.begin(115200); //For communicating with the circuit python
+  Serial1.begin(9600); //For communicating with the circuit python
   // reserve 200 bytes for the inputString:
   inputString.reserve(200);
 }

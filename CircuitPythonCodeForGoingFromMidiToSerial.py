@@ -119,18 +119,21 @@ midi_channel = 1
 midi = adafruit_midi.MIDI(midi_in=usb_midi.ports[0],
                           in_channel=midi_channel-1)
 
-
+uart_Rx_buffer = [0, 0]
 
 # Read any incoming MIDI messages (events) over USB
 # looking for note on, note off, pitch bend change
 # or control change for control 1 (modulation wheel)
 # Apply crude amplitude modulation using speaker enable
 while True:
-    msg = midi.receive()
-    if isinstance(msg, NoteOn) and msg.velocity != 0:
-        print(int(msg.note))
-        uart.write(bytes(msg.note))
+    # msg = midi.receive()
+    # if isinstance(msg, NoteOn) and msg.velocity != 0:
+        # print(int(msg.note))
+        # uart.write(bytes(msg.note))
 
-    elif (isinstance(msg, NoteOff) or isinstance(msg, NoteOn) and msg.velocity == 0):
-        print(int(msg.note))
-        print(uart.write(bytes(msg.note)))
+    # elif (isinstance(msg, NoteOff) or isinstance(msg, NoteOn) and msg.velocity == 0):
+        # print(int(msg.note))
+        # print(uart.write(bytes(msg.note)))
+
+    uart.write(bytes([uart_Rx_buffer[1]]))
+    time.sleep(.5)

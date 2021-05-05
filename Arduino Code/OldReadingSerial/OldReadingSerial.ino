@@ -1,6 +1,6 @@
 /*
 Bob Kammauff & Justyn Reyes
-Midi Output - Guardian Pipe Organ
+OldReadingSerial
 3/25
 */
 
@@ -16,11 +16,14 @@ void setup() {
 
 void loop() {
   // send data only when you receive data:
-  if (Serial1.available() > 0) {
+  if (Serial.available() > 0) {
     // read the incoming byte:
-    incomingByte = Serial1.read();
+    incomingByte = Serial.read();
 
     // say what you got:
     Serial.println(incomingByte, BIN);
+    
   }
+  Serial1.write("hello world!");
+  delay(500);
 }
