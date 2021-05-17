@@ -19,9 +19,9 @@ Servo servos[NUM_NOTES];
 
 #define FIRST_NOTE 53 //corresponds to F3
 #define LAST_NOTE 84 //corresponds to C6
-#define DIFF_ANGLE ON_ANGLE-OFF_ANGLE
-//Since the note on and off values are going to be simply constrained to 0 and 1,
-//It's easiest to have it write the base off angle, and add the difference if it's on, i.e. 1
+
+//If input falls outside this range, data gets thrown out
+
 int note, velocity;
 
 String fromSerial;
@@ -33,30 +33,31 @@ int incomingByte = 0; // for incoming serial data
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600); //For communicating with the computer
-  Serial1.begin(115200); //For communicating with the circuit python
+  
   for (int i = 0; i < NUM_NOTES; i++)
   {
     servos[i].attach(i + FIRST_PIN);
-    /*
+    
     Serial.print("Servo ");
     Serial.print(i);
     Serial.print(" attached to pin ");
     Serial.println(i + FIRST_PIN);
     servos[i].write(90);
-    */
+    
   }
   Serial.println("All Servos Attached");
-  /*
+  
   for (int n = 0; n < NUM_NOTES; n++)
   {
     Serial.print("Testing servo ");
     Serial.println(n);
     servos[n].write(180);
-    delay(500);
+    delay(250);
     servos[n].write(90);
-    delay(500);
+    delay(250);
   }
-  */
+  
+  Serial.println("Done");
 }
 
 void loop() {
@@ -74,9 +75,22 @@ void loop() {
     velocity = atoi(token);
     // Keep printing tokens while one of the
     // delimiters present in str[].
-    Serial.print("Note is: ");
-    Serial.println(note, DEC);
-    Serial.print("Vel is: ");
-    Serial.println(velocity, DEC);
+    if (note >= FIRST_NOTE and note <= LAST_NOTE) //If note is in range
+    {
+      Serial.print("Note is: ");
+      Serial.println(note, DEC);
+      Serial.print("Vel is: ");
+      Serial.println(velocity, DEC);
+      if(velocity > 0)
+      {
+        servos[note - FIRST_NOTE].write(ON_ANGLE);
+      } else
+      {
+        servos[note - FIRST_NOTE].write(OFF_ANGLE);
+      }
+      
+    }
+    
+    
   }
 }
