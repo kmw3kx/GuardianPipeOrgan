@@ -17,6 +17,8 @@ Servo servos[NUM_NOTES];
 #define OFF_ANGLE 90
 #define ON_ANGLE 120
 
+#define FIRST_NOTE 53 //corresponds to F3
+#define LAST_NOTE 84 //corresponds to C6
 #define DIFF_ANGLE ON_ANGLE-OFF_ANGLE
 //Since the note on and off values are going to be simply constrained to 0 and 1,
 //It's easiest to have it write the base off angle, and add the difference if it's on, i.e. 1
@@ -67,15 +69,14 @@ void loop() {
     fromSerial.toCharArray(input, fromSerial.length());
     // Returns first token
     char *token = strtok(input, " ");
-    
+    note = atoi(token);
+    token = strtok(NULL, " ");
+    velocity = atoi(token);
     // Keep printing tokens while one of the
     // delimiters present in str[].
-    while (token != NULL)
-    {
-        Serial.println(token);
-        
-        token = strtok(NULL, " ");
-        delay(10);
-    }
+    Serial.print("Note is: ");
+    Serial.println(note, DEC);
+    Serial.print("Vel is: ");
+    Serial.println(velocity, DEC);
   }
 }
