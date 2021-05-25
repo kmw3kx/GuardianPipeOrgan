@@ -3,19 +3,20 @@
   Bob Kammauff & Justyn Reyes
   Midi Output - Guardian Pipe Organ
   3/25
+  Last Updated: 5/24/2021
 */
 
 #include <Servo.h>
 #include <stdio.h>
 #include <string.h>
- 
+
 
 #define NUM_NOTES 32
 #define FIRST_PIN 22
 Servo servos[NUM_NOTES];
 
-#define OFF_ANGLE 90
-#define ON_ANGLE 120
+#define OFF_ANGLE 360
+#define ON_ANGLE 360
 
 #define FIRST_NOTE 53 //corresponds to F3
 #define LAST_NOTE 84 //corresponds to C6
@@ -33,28 +34,28 @@ int incomingByte = 0; // for incoming serial data
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600); //For communicating with the computer
-  
+
   for (int i = 0; i < NUM_NOTES; i++)
   {
     servos[i].attach(i + FIRST_PIN);
-    
+
     Serial.print("Servo ");
     Serial.print(i);
     Serial.print(" attached to pin ");
     Serial.println(i + FIRST_PIN);
-    servos[i].write(90);
-    
+    servos[i].write(OFF_ANGLE);
+
   }
   Serial.println("All Servos Attached");
-  
+
   for (int n = 0; n < NUM_NOTES; n++)
   {
     Serial.print("Testing servo ");
     Serial.println(n);
     servos[n].write(180);
-    delay(250);
+    delay(100);
     servos[n].write(90);
-    delay(250);
+    delay(50);
   }
   
   Serial.println("Done");
@@ -81,16 +82,16 @@ void loop() {
       Serial.println(note, DEC);
       Serial.print("Vel is: ");
       Serial.println(velocity, DEC);
-      if(velocity > 0)
+      if (velocity > 0)
       {
         servos[note - FIRST_NOTE].write(ON_ANGLE);
       } else
       {
         servos[note - FIRST_NOTE].write(OFF_ANGLE);
       }
-      
+
     }
-    
-    
+
+
   }
 }
