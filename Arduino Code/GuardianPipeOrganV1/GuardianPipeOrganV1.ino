@@ -15,8 +15,9 @@
 #define FIRST_PIN 22
 Servo servos[NUM_NOTES];
 
-#define OFF_ANGLE 360
-#define ON_ANGLE 360
+#define OFF_ANGLE 0
+#define ON_ANGLE 180
+
 
 #define FIRST_NOTE 53 //corresponds to F3
 #define LAST_NOTE 84 //corresponds to C6
@@ -52,9 +53,9 @@ void setup() {
   {
     Serial.print("Testing servo ");
     Serial.println(n);
-    servos[n].write(180);
+    servos[n].write(ON_ANGLE);
     delay(100);
-    servos[n].write(90);
+    servos[n].write(OFF_ANGLE);
     delay(50);
   }
   
