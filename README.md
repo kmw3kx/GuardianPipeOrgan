@@ -180,3 +180,44 @@ This week, Bob is on code, and Justyn is on CAD. Thankfully, I think most of the
 ### CAD
 
 [Link to Onshape](https://cvilleschools.onshape.com/documents/e358e4e3ba9e07c5ae938246/w/c6c09eac29318e33af1bc1ef/e/29cbd6e08dd43a0f8d613074)
+
+### What Went Wrong
+
+Why will I be unable to finish this project by the end of the year? A few reasons:
+
+1. Lack of In-Person Lab time with my partner
+2. Long turn-around on fabrication
+3. The project is just insane
+
+#### 1. Lack of In-Person Lab time with my partner
+
+Never being able to actually see my partner face to face makes it extremely difficult to collaborate. I would try to delegate work for him to do but not being able to see him doing it and making sure he stayed on track meant that I would ultimately be the one doing it. Me also being the only one to understand the physics of sound and midi also meant it was challenging to convey what I wanted. 
+
+I could fix this in the future by not choosing such a complicated project to do during a national pandemic. Also I started to remedy the problem by coming in on my virtual days when we started having school in person. 
+
+#### 2. Long turn-around on fabrication
+
+This started with me 3D printing the first test whistle. It easily took 2 weeks from submitting the file for printing to actually get it into my hands so I could test it. That day I learned the hard lesson to never print a closed cyllender. To quote my teach: 
+> "closed or nearly closed cylinders are nightmares, filled with monsters and support material that wont dissolve."
+
+This was just the starting point of design hell. Trying to print something that makes sound is incredibly difficult, because you just can't see how it will sound in CAD; you have to print it out and test it.
+
+Thankfully I did my research and found out how whistles make noise so there was less of that, but I still had to print out 5 separate pipes before one of them actually worked. When ur not in the lab 5 days a week, it just increases the turn-around time as it would have to dissolve in the bath for at least a day after printing
+
+The circumstances aren't just to blame; I also had to learn how to design parts that would use no support material. I did a good job with it tho, cuz my parts are now real nice.
+
+#### 3. The project is just insane
+
+When I was first pitching it to my teacher, he thought I just wanted to make a robot play music, so he suggested that I just use a MP3 shield and call it a day 
+
+**Oh how easy that would've been...**
+
+MIDI-Controlled Pipe Organs are just so cool. Something about bringing the perfection of MIDI into the physical world just sounds so cool when you hear it. But it's also just unlike anything anyone else here has tried to do, so I have to build it from the ground up. Thankfully there are projects online that are quite similar, but I was still just trying to figure out the best way to do it only a month ago. 
+
+Now, taking all of that into consideration, by how the past couple of weeks have been going, I think I'll be able to finish it before next school year. Right now, I have two more weeks of school, plus two weeks of engineering "camp" after that. The project is nearing completion in CAD, and now I'm in stuff I have actually done before (Making the thing for it all to fit into!!)
+
+So, if you'll excuse me, I have work to do.
+
+-Bob K.
+6/1
+
