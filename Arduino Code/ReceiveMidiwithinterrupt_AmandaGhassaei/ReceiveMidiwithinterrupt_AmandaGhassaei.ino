@@ -1,4 +1,4 @@
-/*Receive MIDI and check if note = 60
+/*Receive Midi with interrupt
 By Amanda Ghassaei
 July 2012
 <a href="https://www.instructables.com/id/Send-and-Receive-MIDI-with-Arduino/">
@@ -16,30 +16,37 @@ byte commandByte;
 byte noteByte;
 byte velocityByte;
 
-byte noteOn = 144;
-
-//light up led at pin 13 when receiving noteON message with note = 60
-
 void setup(){
+  Serial.begin(9600);
   Serial1.begin(31250);
-  pinMode(13,OUTPUT);
-  digitalWrite(13,LOW);
+  Serial.println("hi mom");
+  
+  cli();//stop interrupts
+
+  //set timer2 interrupt every 128us
+  TCCR2A = 0;// set entire TCCR2A register to 0
+  TCCR2B = 0;// same for TCCR2B
+  TCNT2  = 0;//initialize counter value to 0
+  // set compare match register for 7.8khz increments
+  OCR2A = 255;// = (16*10^6) / (7812.5*8) - 1 (must be <256)
+  // turn on CTC mode
+  TCCR2A |= (1 << WGM21);
+  // Set CS11 bit for 8 prescaler
+  TCCR2B |= (1 << CS11);   
+  // enable timer compare interrupt
+  TIMSK2 |= (1 << OCIE2A);
+  
+  sei();//allow interrupts
+  
 }
 
-void checkMIDI(){
+
+ISR(TIMER2_COMPA_vect) {//checks for incoming midi every 128us
   do{
     if (Serial1.available()){
       commandByte = Serial1.read();//read first byte
       noteByte = Serial1.read();//read next byte
       velocityByte = Serial1.read();//read final byte
-      if (commandByte == noteOn){//if note on message
-        //check if note == 60 and velocity > 0
-        if (noteByte == 60 && velocityByte > 0){
-          digitalWrite(13,HIGH);//turn on led
-          delay(500);
-          digitalWrite(13,LOW);//turn led off
-        }
-      }
        Serial.println(commandByte, BIN);
         Serial.println(noteByte, BIN);
         Serial.println(velocityByte, BIN);
@@ -47,8 +54,7 @@ void checkMIDI(){
   }
   while (Serial1.available() > 2);//when at least three bytes available
 }
-    
 
 void loop(){
-  checkMIDI();
+  //do whatever here
 }
