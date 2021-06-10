@@ -221,3 +221,8 @@ So, if you'll excuse me, I have work to do.
 -Bob K.
 6/1
 
+#### What i will do to finish
+
+6/7/21
+
+I have already designed
