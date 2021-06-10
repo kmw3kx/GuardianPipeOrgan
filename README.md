@@ -6,11 +6,47 @@ Pardon the dust as we keep updating this README!
 
 ins Table of Contents
 
+<README Requirements>
+        
+        Knock out the design completely in CAD before you start construction.  Leave room for wires.
+
+        Throughout the project, document your work on github.  You should communicate enough information so that someone else in your class could reasonably replicate your project.
+
+        You should include, in this order:
+
+        Description of the planning that went into the project, design decisions, and engineering details
+        Materials used
+        Wiring diagram of your circuit
+        Commented code
+        CAD renderings
+        Actual photos and/or video (well lit and in focus)
+        Your process or a schedule of how you spent your time
+        Discussion of problems, errors, miscalculations, and missteps and how you overcame them
+        If you didn't finish, please add an obituary, detailing what you'd do if you picked this project back up, and anything you'd have done differently.
+        
+</README Requirements>
 
 ### Project Pre-Planning
 ins Pre-planning Document
 
 [Link](https://docs.google.com/document/d/1uND1lurYmUpj-_9FQsYxZuwOPflugXZLaDDHEH4wFzs/edit?usp=sharing)
+
+### Materials used
+* 32 Valves (laser-cut casing, silicone tubing, and 3D printed cam)
+* 32 Organ Pipes 
+* Arduino Mega 
+* MIDI connector Digikey CP-2350-ND
+* 220Ohm 1/4watt resistor Digikey CF14JT220RCT-ND
+* 1N4148 diode Digikey1N4148-TAPCT-ND
+* 10kOhm 1/4watt resistor Digikey CF14JT10K0CT-ND
+* 470 Ohm 1/4watt resistor Digikey CF14JT470RCT-ND (I used 2x220 instead)
+* 6N138 optocoupler Digikey 751-1263-5-ND
+* Balloons!
+* Lots of bolts and screws
+* Breadboard
+* wires
+
+### Wiring
 
 ### Pseudocode
 Link to code [here.](GuardianPipeOrganOutPseudoCode)
@@ -66,6 +102,8 @@ Now that I've described the problem, the solution seems clear: do a mix
 
 This didn't work
 
+<details>
+        
 ```python
 pins = [board.D13,
         board.D12,
@@ -96,6 +134,7 @@ for pin in pins:
 del pins, x  # done with that
 noteLEDs.direction = digitalio.Direction.OUTPUT
 ```
+</details>
 
 Lets try this now: set the pins each to a variable, then set each variable to a list.
 
@@ -142,6 +181,11 @@ noteLEDs = [pinD13,
 
 # Brute forced
 ```
+
+### CAD
+
+### Media
+
 ### Schedule
 
 | 1st week |  Get midi working with the circuit pythons  |  Feb. 22nd-26th |
