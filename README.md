@@ -330,9 +330,127 @@ I guess I should explain my goals for this code:
 3. process that data to get what note should be either turned on or off
 4. send the corresponding command to the servo, allowing air to pass, and make the organ pipe speak.
 
+[Here's](https://github.com/jkammau97/GuardianPipeOrgan/blob/8430313b24fd7d28eb77173dfa6983c463fdca4e/Arduino%20Code/GuardianPipeOrganV1/GuardianPipeOrganV1.ino) the code I came up with for the servos:
+
+<details>
+        ```arduino
+        
+        /*
+          Bob Kammauff & Justyn Reyes
+          Midi Output - Guardian Pipe Organ
+          3/25
+          Last Updated: 5/24/2021
+        */
+
+        #include <Servo.h>
+        #include <stdio.h>
+        #include <string.h>
+
+
+        #define NUM_NOTES 32
+        #define FIRST_PIN 22
+        Servo servos[NUM_NOTES];
+
+        #define OFF_ANGLE 0
+        #define ON_ANGLE 180
+
+
+        #define FIRST_NOTE 53 //corresponds to F3
+        #define LAST_NOTE 84 //corresponds to C6
+
+        //If input falls outside this range, data gets thrown out
+
+        int note, velocity;
+
+        String fromSerial;
+
+        char input[10];
+
+        int incomingByte = 0; // for incoming serial data
+
+        void setup() {
+          // put your setup code here, to run once:
+          Serial.begin(9600); //For communicating with the computer
+
+          for (int i = 0; i < NUM_NOTES; i++)
+          {
+            servos[i].attach(i + FIRST_PIN);
+
+            Serial.print("Servo ");
+            Serial.print(i);
+            Serial.print(" attached to pin ");
+            Serial.println(i + FIRST_PIN);
+            servos[i].write(OFF_ANGLE);
+
+          }
+          Serial.println("All Servos Attached");
+
+          for (int n = 0; n < NUM_NOTES; n++)
+          {
+            Serial.print("Testing servo ");
+            Serial.println(n);
+            servos[n].write(ON_ANGLE);
+            delay(100);
+            servos[n].write(OFF_ANGLE);
+            delay(50);
+          }
+
+          Serial.println("Done");
+        }
+
+        void loop() {
+          // put your main code here, to run repeatedly:
+          // send data only when you receive data:
+          while (Serial.available() > 0)
+          {
+            fromSerial = Serial.readStringUntil('\n');
+            Serial.println(fromSerial); //Echoes back what was received
+            fromSerial.toCharArray(input, fromSerial.length());
+            // Returns first token
+            char *token = strtok(input, " ");
+            note = atoi(token);
+            token = strtok(NULL, " ");
+            velocity = atoi(token);
+            // Keep printing tokens while one of the
+            // delimiters present in str[].
+            if (note >= FIRST_NOTE and note <= LAST_NOTE) //If note is in range
+            {
+              Serial.print("Note is: ");
+              Serial.println(note, DEC);
+              Serial.print("Vel is: ");
+              Serial.println(velocity, DEC);
+              if (velocity > 0)
+              {
+                servos[note - FIRST_NOTE].write(ON_ANGLE);
+              } else
+              {
+                servos[note - FIRST_NOTE].write(OFF_ANGLE);
+              }
+
+            }
+
+
+          }
+        }
+        
+        ```
+</details>
+
+This code simply establishes communication with the servos, and ties each one to a note. In MIDI, each note on the keyboard is assigned a name and an integer corresponing to said note, and then the next part of the data packet the midi sends over is called velocity, which is simply how loud the note should be played. I'll include some specifics about how a midi byte is transferred in the section about the midi code, but for now, all you need to know is that midi data simply sends over a note and whether to turn it on or off at the time when it is sent. So, back when I had no access to said midi data, I made up my own and simply sent it over the serial monitor from my computer. The syntax for said data is: note integer, space, velocity integer(anything that wasn't zero turned it on, with zero turning it off), and another space. My code takes that data, splits it via the spaces, and then converts the text of the numbers into actual integer values that it can use in calculations. These values are then echoed back over the serial monitor, and the corresponding servo makes the correct movement. 
+        
+Now, for the MIDI code that reads the data coming over the ports! [Here](Arduino Code/ReceiveMidiWEdits/ReceiveMidiWEdits.ino) it is!
+
+I'm actually going to wait to put it in the README for now. It needs a LOT of polishing up, but this is the source that I got it from, and where I'm going to continue to work on this code
+        
+This code DOES work and it works consistently, but it's not giving me the data that I was expecting it to. It's like a geode; the gem I'm looking for is in there, but it's gonna take some parsing to extract it into a useable chunk. instead of giving me `command, note, velocity` like I was expecting, it's giving me: `Command byte, 255, 255, Note byte, 255, 255, Velocity byte, 255, 255`
+
 
 ### CAD
 
+[Link to Onshape](https://cvilleschools.onshape.com/documents/e358e4e3ba9e07c5ae938246/w/c6c09eac29318e33af1bc1ef/e/29cbd6e08dd43a0f8d613074)
+        
+The majority of this project was spent in CAD HELL. Trying to make a 3D object that converts air into sound is challenging to get right. What I first ended up doing was researching how Pipe organ pipes make sound and what kind of geometry creates said conditions. 
+        
 ### Media
 
 ### Schedule
@@ -368,11 +486,6 @@ Justyn is having computer problems so I'm the only one who can do Onshape. I had
 Ok so thankfully, at the time I am writing this, my life has just gotten way less busy. All of my music stuff is done, so it's time to focus on school again. But we're also super behind on schedule. Today, I just realized that there was an extremely simple solution to this project: buy a cheap melodica and put it in the guardian. Unfortunately, we're already so deep into the organ pipes that it's pointless to just start from scratch, and besides; I prefer the flute tone of the pipes instead of the reedy tone of te melodica. That, and that the melodica wouldn't fit nicely in the robot. but that's an easy idea to save for the future!
 
 This week, Bob is on code, and Justyn is on CAD. Thankfully, I think most of the code for the arduino mega is already on the internet so I can just borrow it. But first, we need to establish a tubing size, and then 
-
-
-### CAD
-
-[Link to Onshape](https://cvilleschools.onshape.com/documents/e358e4e3ba9e07c5ae938246/w/c6c09eac29318e33af1bc1ef/e/29cbd6e08dd43a0f8d613074)
 
 ### What Went Wrong
 
