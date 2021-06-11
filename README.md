@@ -6,7 +6,9 @@ Pardon the dust as we keep updating this README!
 
 ins Table of Contents
 
-<README Requirements>
+### README Requirements
+
+<details>
         
         Knock out the design completely in CAD before you start construction.  Leave room for wires.
 
@@ -24,23 +26,141 @@ ins Table of Contents
         Discussion of problems, errors, miscalculations, and missteps and how you overcame them
         If you didn't finish, please add an obituary, detailing what you'd do if you picked this project back up, and anything you'd have done differently.
         
-</README Requirements>
+</details>
 
 ### Project Pre-Planning
-ins Pre-planning Document
+
+
+1. *Create your question:*
+
+
+  a. *What's the problem you're trying to solve?*
+  
+  
+    i. Have a robot that can serenade people with beautiful music
+    
+    ii. Build a self-playing organ
+    
+  b. *How will you determine if you've solved your problem? (make sure your problem is specific and testable!)*
+  
+    i. We can play Zelda's lullaby on it and have it sound pure, and at a constant volume. Is a midi output so that it can also play other songs
+    
+2. *Break down your problem:*
+
+
+  a. **Criteria (goals):**
+  
+    i. *How does it solve the problem?*
+    
+      1.
+      
+    ii. *~~What should it look like:~~*
+    
+    iii. *What is it going to do?*
+    
+  b. **Constraints (limitations)**
+  
+    i. *Don't hurt anyone*
+    
+      1. Pressurized Air can be dangerous
+      
+    ii. *Budget:*
+    
+      1. I think we can get by with $50
+      
+    iii. *Time frame* (roughly 2 months)
+    
+    iv. *Size* (laser cutter: 300mm x 600mm , 3d Printer 8&quot;x8&quot;x9&quot;)
+    
+      1. The size that the pipes will need to be
+      
+    v. *Any knowledge limitations that you'll need to correct?*
+    
+      1. Pneumatics
+      
+      2. How to design a valve
+      
+      3. Controlling multiple solenoids with not many pins
+      
+      4. Flow rate
+      
+      5. MIDI Input/Output
+      
+      6. Organ Pipe design
+      
+3. *Research:*
+
+
+  a. *Delegate this with your partner! Whose researching what?*
+  
+    i. Let's make separate Google Docs to take notes in about each topic
+    
+      1. Bob = MIDI, Using a microcontroller as a MIDI in/out
+      
+      2. Justyn = Flow rate, pneumatics, fluid dynamics
+      
+      3. Both: Organ Pipe Design
+      
+        a. Hopefully getting in touch with an organ manufacturer up in Staunton
+        
+  b. *Improve your google-jitsu.*
+  
+  c. *Remember, you DON'T have a plan yet. This is research for pre-planning. Researching mp3 shields….how does a piezo buzzer work, that sort of thing…WHAT IS PID?? How do I determine CoM in Onshape?*
+  
+  4. I cannot tell you what questions to ask, as they should be very project specific, but for example, you might want to know how an organ pipe works before building an organ, or you might want to know how to calculate wheel speed , before you build a PID box that controls wheel speed.
+
+4. *Make a list of possible solutions:*
+
+
+  1. *Whats it going to look like?*
+
+
+  3. *What components will it use?*
+
+
+    1. Arduino or Circuit Python
+    
+  4. *How does this solution solve the problem?*
+
+
+  6. **Make sure to include a short list of pros and cons for each solution.**
+
+
+  8.
+
+1. We are pretty decided that it's going to be an organ
+2. Solenoids or Solenoid Valves?
+
+
+  1. Solenoids
+
+
+    1. Pros: Cheaper, less specialized, have been used before for this type of project
+    
+    
+    2. Cons: The solenoid valves are gonna be more precise and a better seal
+    
+  2. Solenoid valves
+
+
+    1. Pros
+3.
+
+[Link to engineering design process:](https://www.teachengineering.org/design/designprocess)
 
 [Link](https://docs.google.com/document/d/1uND1lurYmUpj-_9FQsYxZuwOPflugXZLaDDHEH4wFzs/edit?usp=sharing)
 
 ### Materials used
-* 32 Valves (laser-cut casing, silicone tubing, and 3D printed cam)
-* 32 Organ Pipes 
-* Arduino Mega 
-* MIDI connector Digikey CP-2350-ND
-* 220Ohm 1/4watt resistor Digikey CF14JT220RCT-ND
-* 1N4148 diode Digikey1N4148-TAPCT-ND
-* 10kOhm 1/4watt resistor Digikey CF14JT10K0CT-ND
-* 470 Ohm 1/4watt resistor Digikey CF14JT470RCT-ND (I used 2x220 instead)
-* 6N138 optocoupler Digikey 751-1263-5-ND
+* 32 Valves (laser-cut casing, [3/16" ID x 5/16" OD silicone tubing](https://www.amazon.com/dp/B07TH8H1QP/ref=cm_sw_em_r_mt_dp_J0TEWZFQ2DN48WCQM4QV?_encoding=UTF8&psc=1), and 3D printed cam)
+* 32 3D printed Organ Pipes 
+* Arduino Mega (from Dr. Shields)
+* [MIDI 5-pin to USB-A Cable](https://www.amazon.com/dp/B087G7L7J2/ref=cm_sw_em_r_mt_dp_3BY1T0T89K53A4C2TZDT?_encoding=UTF8&psc=1)
+* [MIDI connector](https://www.amazon.com/dp/B07NY6Z2N7/ref=cm_sw_em_r_mt_dp_BFAF0GJ7GPHXVVTXCVRJ?_encoding=UTF8&psc=1)
+* 220 Ohm 1/4watt resistor (In Sigma Lab)
+* [1N4148 diode](https://www.amazon.com/dp/B06XB1R2NK/ref=cm_sw_em_r_mt_dp_FQDK5978XHRZRAK23W6Y) (I had one on hand, but I included a link to order one as well)
+* 10k Ohm 1/4watt resistor (In Sigma Lab)
+* 470 Ohm 1/4watt resistor (I used 2x220 instead)
+* [6N138 optocoupler](https://www.amazon.com/dp/B07DLTSXC1/ref=cm_sw_em_r_mt_dp_HDJK9QW9ZMRRCRK7CJNF?_encoding=UTF8&psc=1)
 * Balloons!
 * Lots of bolts and screws
 * Breadboard
@@ -48,50 +168,66 @@ ins Pre-planning Document
 
 ### Wiring
 
+[MIDI Fritzing file](Wiring/MidiCircuit.fzz)
+
+[<img src = "Wiring/MidiCircuit.png" alt = "MidiCircuit.png" width = "" height = "">](Wiring/MidiCircuit.png)
+
 ### Pseudocode
 Link to code [here.](GuardianPipeOrganOutPseudoCode)
-```python
-# Bob Kammauff
-# 2/4/2021
-# Guardian Pipe Organ - Output
-# pseudocode
 
-# at the top here, put all of the libraries we'll be using
+<details>
+        
+        ```python
+        # Bob Kammauff
+        # 2/4/2021
+        # Guardian Pipe Organ - Output
+        # pseudocode
 
-import time
+        # at the top here, put all of the libraries we'll be using
 
-import digitalio
-import touchio
-import busio
-import board
-import usb_midi
-import neopixel
+        import time
+
+        import digitalio
+        import touchio
+        import busio
+        import board
+        import usb_midi
+        import neopixel
 
 
-import adafruit_midi
+        import adafruit_midi
 
-from adafruit_midi.note_on          import NoteOn
-from adafruit_midi.control_change   import ControlChange
-from adafruit_midi.pitch_bend       import PitchBend
+        from adafruit_midi.note_on          import NoteOn
+        from adafruit_midi.control_change   import ControlChange
+        from adafruit_midi.pitch_bend       import PitchBend
 
-# + some others that I don't know about
+        # + some others that I don't know about
 
-# set up any serial port communication we'll need
+        # set up any serial port communication we'll need
 
-# using some type of shift register or port thingy to get more pins
-# so initialize that
+        # using some type of shift register or port thingy to get more pins
+        # so initialize that
 
-# Read any incoming MIDI messages (events) over USB
-# looking for note on, note off messages
+        # Read any incoming MIDI messages (events) over USB
+        # looking for note on, note off messages
 
-# Our organ will have 32 notes starting at middle C (C4) and going up to G6
-# Each time a note on value is detected, write the pin connected to that note's solonoid high
-# Each time theres a note off value, write the pin low
+        # Our organ will have 32 notes starting at middle C (C4) and going up to G6
+        # Each time a note on value is detected, write the pin connected to that note's solonoid high
+        # Each time theres a note off value, write the pin low
 
-# there will be transistors in between every solonoid to supply the correct voltage
-```
+        # there will be transistors in between every solonoid to supply the correct voltage
+        ```
+   
+</details>
 
 ## Working on the Code
+
+Throughout this process, I gradually moved from using multiple metro expresses, to using a metro and an Arduino Mega, to using just the mega. So a lot of what I've written is very specific to the point in time when I was using a metro M0. If you want to read that stuff, I'll include it all into a expanding section:
+
+It's not required for the rest of the README to make sense
+
+<details>
+
 So, I do not have the transistors or the shift registers or any of that fancy stuff yet; all I got is a Circuit Python and some LED's, but the coding will be the same either way. Let's set up a circuit python to read Midi Data coming from my computer to light up some led's.
 
 The wiring is easy. a bunch of LED's and resistors. Iet's get working on the code for it.
@@ -101,8 +237,6 @@ Ok so I've already run into a couple problems about how to write the code. The c
 Now that I've described the problem, the solution seems clear: do a mix
 
 This didn't work
-
-<details>
         
 ```python
 pins = [board.D13,
@@ -134,7 +268,7 @@ for pin in pins:
 del pins, x  # done with that
 noteLEDs.direction = digitalio.Direction.OUTPUT
 ```
-</details>
+
 
 Lets try this now: set the pins each to a variable, then set each variable to a list.
 
@@ -181,6 +315,21 @@ noteLEDs = [pinD13,
 
 # Brute forced
 ```
+</details>
+
+Anyway, here's my thought process simplified:
+
+After trying to get serial communication working with a metro express and failing for a week, I decided to totally ditch using one and instead use just an arduino mega to process MIDI data and control all of the servos. 
+
+This means that instead of being able to send midi data just across the usb cable like with the metro, I actually had to go and order a MIDI to USB cable from Amazon. [Here's](https://www.amazon.com/dp/B087G7L7J2/ref=cm_sw_em_r_mt_dp_3BY1T0T89K53A4C2TZDT?_encoding=UTF8&psc=1) the one I ended up buying.
+
+I guess I should explain my goals for this code:
+
+1. Connect the arduino mega to the 32 servos that control the valves
+2. Receive data being transmitted over the MIDI IN jack hooked up to the computer
+3. process that data to get what note should be either turned on or off
+4. send the corresponding command to the servo, allowing air to pass, and make the organ pipe speak.
+
 
 ### CAD
 
