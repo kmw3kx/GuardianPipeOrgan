@@ -16,7 +16,7 @@
 Servo servos[NUM_NOTES];
 
 #define OFF_ANGLE 0
-#define ON_ANGLE 180
+#define ON_ANGLE 135
 
 
 #define FIRST_NOTE 53 //corresponds to F3
