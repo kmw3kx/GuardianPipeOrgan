@@ -531,4 +531,20 @@ So, if you'll excuse me, I have work to do.
 
 6/7/21
 
-I have already designed
+
+#### Notes
+
+So I have not approached this project correctly. So for this first week of summer I have a chance to work on that and redeem myself. Here's what my course of action for today is:
+
+Today, I need to finish mounting everything onto the project itself. Yesterday, I couldn't get the midi working because it had unplugged itself in transferring it. I need to mount all of the electronics onto the project itself so I will no longer have that problem. 
+
+So let's mount:
+
+* The Arduino Mega
+* The Breadboard
+* The Midi In/Out ports
+* The rest of the valve brackets
+
+I need to do a lot of this in CAD so I don't create even more waste than I already have. I'm going to try to save what I've already fabricated, but there are absolutely no promises. 
+
+JK it should be ok, but we'll see.
