@@ -520,13 +520,4 @@ When I was first pitching it to my teacher, he thought I just wanted to make a r
 
 MIDI-Controlled Pipe Organs are just so cool. Something about bringing the perfection of MIDI into the physical world just sounds so cool when you hear it. But it's also just unlike anything anyone else here has tried to do, so I have to build it from the ground up. Thankfully there are projects online that are quite similar, but I was still just trying to figure out the best way to do it only a month ago. 
 
-Now, taking all of that into consideration, by how the past couple of weeks have been going, I think I'll be able to finish it before next school year. Right now, I have two more weeks of school, plus two weeks of engineering "camp" after that. The project is nearing completion in CAD, and now I'm in stuff I have actually done before (Making the thing for it all to fit into!!)
-
-So, if you'll excuse me, I have work to do.
-
--Bob K.
-6/1
-
-#### What i will do to finish
-
-6/7/21
+        I hope to revisit this project someday, but for the time being, it'll have to wait.
