@@ -461,10 +461,11 @@ The majority of this project was spent in CAD HELL. Trying to make a 3D object t
         
 I'm especially proud of my design for the pipes. They are stopped organ pipes with caps to adjust the tuning. Stopping the organ pipes drops the octave and requires less air pressure to sound, allowing for them to be more practical in my design. They are as thin walled as i could 3D print. 
         
-        
+[<img src = "Images/PlasticOrganPipe.png" alt = "PlasticOrganPipe.png" width = "" height = "">](Images/PlasticOrganPipe.png)
         
 I filled in the space under the top lip to allow these organ pipes to be able to be printed with no supports! Carefully follow the slope and cut it off with a razor blade and it should work perfectly. Be careful with the bottom lip; if it gets too mangled, it might not direct air towards the upper lip and the organ pipe won't sound.
         
+[<img src = "Images/SiliconeTubeValve.png" alt = "SiliconeTubeValve.png" width = "" height = "">](Images/SiliconeTubeValve.png)
 
 I am also very proud of the valve design. They use silicone tubing and a mini servo in a cam and follower mechanism to stop air flow electronically, much cheaper than a solenoid valve. The design is not my own (I can't find the original inspiration, sadly), but I did increase the size to accomodate a higher volume of air.
         
