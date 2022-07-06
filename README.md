@@ -2,9 +2,17 @@
 
 [<img src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4da7ebca-186f-412e-8aa4-d7fcf4fde7b9/de98lke-fb39619d-336d-4663-add4-e0f87b19a37b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNGRhN2ViY2EtMTg2Zi00MTJlLThhYTQtZDdmY2Y0ZmRlN2I5XC9kZTk4bGtlLWZiMzk2MTlkLTMzNmQtNDY2My1hZGQ0LWUwZjg3YjE5YTM3Yi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.55sYyvbvFXvSWeLJUF-AZFiEDiaG3U3LSn7FCi4E5nI" alt = "Terrako by rongs1234 on DeviantArt" width = "" height = "">](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Frongs1234%2Fart%2FTerrako-862044206&psig=AOvVaw2PNPe1dH_EVHYLI62axwsY&ust=1612890263248000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMC378vi2u4CFQAAAAAdAAAAABAD)
 
-Pardon the dust as we keep updating this README!
+## Table of Contents
+- [README Requirements](#readme-requirements)
+- [Project Pre-Planning](#project-pre-planning)
+- [Materials used](#materials-used)
+- [Wiring](#wiring)
+- [Pseudocode](#pseudocode)
+- [Working on the Code](#working-on-the-code)
+- [CAD](#cad)
+- [Schedule](#schedule)
+- [What went wrong](#what-went-wrong)
 
-ins Table of Contents
 
 ### README Requirements
 
@@ -451,7 +459,16 @@ This code DOES work and it works consistently, but it's not giving me the data t
         
 The majority of this project was spent in CAD HELL. Trying to make a 3D object that converts air into sound is challenging to get right. What I first ended up doing was researching how Pipe organ pipes make sound and what kind of geometry creates said conditions. 
         
-### Media
+I'm especially proud of my design for the pipes. They are stopped organ pipes with caps to adjust the tuning. Stopping the organ pipes drops the octave and requires less air pressure to sound, allowing for them to be more practical in my design. They are as thin walled as i could 3D print. 
+        
+        
+        
+I filled in the space under the top lip to allow these organ pipes to be able to be printed with no supports! Carefully follow the slope and cut it off with a razor blade and it should work perfectly. Be careful with the bottom lip; if it gets too mangled, it might not direct air towards the upper lip and the organ pipe won't sound.
+        
+
+I am also very proud of the valve design. They use silicone tubing and a mini servo in a cam and follower mechanism to stop air flow electronically, much cheaper than a solenoid valve. The design is not my own (I can't find the original inspiration, sadly), but I did increase the size to accomodate a higher volume of air.
+        
+        
 
 ### Schedule
 
